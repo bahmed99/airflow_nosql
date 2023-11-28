@@ -1,0 +1,11 @@
+FROM python:latest
+
+WORKDIR /app
+
+COPY ./src/1_rabbit_to_minio.py  /app/
+
+RUN pip install pika
+
+RUN pip install minio
+
+ENTRYPOINT [ "python", "1_rabbit_to_minio.py"]

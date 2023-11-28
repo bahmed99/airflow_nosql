@@ -1,0 +1,11 @@
+FROM python:latest
+
+WORKDIR /app
+
+COPY ./src/2_rabbit_to_db.py  /app/
+
+RUN pip install pika
+
+RUN pip install pymongo
+
+ENTRYPOINT [ "python", "2_rabbit_to_db.py"]
